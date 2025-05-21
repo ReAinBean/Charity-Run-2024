@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Run 2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        header {
+            position: relative;
+            height: 175px;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+        .slideshow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slideshow img.active {
+            opacity: 1;
+        }
+        .testimonial {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comment {
+            font-style: italic;
+            margin: 0;
+        }
+
+        .author {
+            text-align: right;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        header h1 {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: cyan;
+        }
+        nav a {
+            color: #000000;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        footer {
+            background-color: rgb(152, 255, 255);
+            color: #000000;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .time {
+            text-align: center;
+        }
+        .time span {
+            font-size: 2em;
+            display: block;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00eaff;
+            color: #fff643;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+        }
+        #back-to-top:hover {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="slideshow">
+            <img src="Charity2.jpg" alt="Charity Event 1" class="active">
+            <img src="20171126_UNICEF-CHARITY-RUN-2017_MIC_1596_edited-r-1200x800.jpg" alt="Charity Event 2">
+            <img src="OIP.jpg" alt="Charity Event 3">
+        </div>
+        <h1 style="font-size: 40px;">Welcome to Charity Events 2024</h1>
+    </header>
+    <nav>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#program-event" onclick="showSection('program-event')">Program Events</a>
+        <a href="#general-information" onclick="showSection('general-information')">General Information</a>
+        <a href="#participation-information" onclick="showSection('participation-information')">Participation Information</a>
+        <a href="#about" onclick="showSection('about')">About</a>
+        <a href="Task 2 Assignment.html" target="_blank">Event Enquiry</a>
+    </nav>
+    <main class="container">
+        <section id="home" class="section active">
+            <h1 style="text-align: center; color: #3498db; font-family: 'Arial', sans-serif;">Welcome to Charity Run 2024</h1>
+                <p style="text-align: center; font-size: 18px; font-family: 'Arial', sans-serif; margin-top: 10px;">“Welcome to Charity Run 2024! This is your chance to join us in raising awareness and funds for various charitable organizations. Let’s run together for a noble cause and make a difference in our community.”</p>
+
+            <h1 style="text-align: center; color: #3498db; font-family: 'Arial', sans-serif; margin-top: 30px;">Our Goals</h1>
+                <p style="text-align: center; font-size: 18px; font-family: 'Arial', sans-serif; margin-top: 10px;"><strong>Fundraising:</strong> Raise money to support charitable activities such as education, healthcare, environmental protection, and helping the underprivileged.</p>
+                <p style="text-align: center; font-size: 18px; font-family: 'Arial', sans-serif; margin-top: 10px;"><strong>Awareness:</strong> Increase community awareness about social issues and encourage participation in charitable activities.</p>
+                <p style="text-align: center; font-size: 18px; font-family: 'Arial', sans-serif; margin-top: 10px;"><strong>Health Promotion:</strong> Promote a healthy lifestyle through running.</p>
+                <p style="text-align: center; font-size: 18px; font-family: 'Arial', sans-serif; margin-top: 10px;"><strong>Community Building:</strong> Create opportunities for people to meet, interact, and build relationships within the community.</p>
+
+            <h1 style="text-align: center; color: #3498db; font-family: 'Arial', sans-serif; margin-top: 30px;">Event Information</h1>
+                <p style="text-align: center; font-size: 18px; font-family: 'Arial', sans-serif; margin-top: 10px;"><strong>Date and Time:</strong> The event will take place on October 11, 2024, from 8:00 AM to 4:00 PM.</p>
+                <p style="text-align: center; font-size: 18px; font-family: 'Arial', sans-serif; margin-top: 10px;"><strong>Location:</strong> Saigon Exhibition and Convention Center (SECC), 799 Nguyen Van Linh, Tan Phu, District 7, Ho Chi Minh City.</p>
+
+        <h1 style="text-align: center; color: #3498db; font-family: 'Arial', sans-serif; margin-top: 30px;">Time Till Event End</h1>
+            <div id="countdown" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+            <div class="time" style="margin: 0 15px; text-align: center;">
+        <span id="days" style="font-size: 24px; font-weight: bold;"></span><br>Days
+            </div>
+            
+            <div class="time" style="margin: 0 15px; text-align: center;">
+        <span id="hours" style="font-size: 24px; font-weight: bold;"></span><br>Hours
+            </div>
+
+            <div class="time" style="margin: 0 15px; text-align: center;">
+        <span id="minutes" style="font-size: 24px; font-weight: bold;"></span><br>Minutes
+            </div>
+
+            <div class="time" style="margin: 0 15px; text-align: center;">
+        <span id="seconds" style="font-size: 24px; font-weight: bold;"></span><br>Seconds
+            </div>
+
+            </div>
+        <h1 style="text-align: center; color: #3498db; font-family: 'Arial', sans-serif; margin-top: 30px;">Participant Feedback</h1>
+            <div class="testimonial">
+                <p class="comment">“Last year’s charity run was amazing! I was thrilled to contribute to fundraising for charitable projects.”</p>
+                <p class="author">- John Doe</p>
+            </div>
+            <div class="testimonial">
+                <p class="comment">“Participating in the run not only improved my health but also made me feel like I was doing something meaningful for the community.”</p>
+                <p class="author">- Jane Smith</p>
+            </div>
+        </section>
+        
+        <section id="program-event" class="section">
+            <h2 style="color: #27ae60;">Program Events:</h2>
+            <p>"Charity Run 2024" will feature an exciting lineup of events aimed at promoting health, wellness, and community involvement. The main objectives of this event are to raise awareness for various charitable causes and bring together the community for a meaningful day. The event will take place on October 11, 2024, at the Saigon Exhibition and Convention Center (SECC) in Ho Chi Minh City. Key activities include:</p>
+            <ul>
+                <li><strong>Opening Ceremony:</strong> Welcoming participants and introducing sponsors.</li>
+                <li><strong>Charity Run:</strong> A 5 km run open to all ages and fitness levels.</li>
+                <li><strong>Fundraising Auction:</strong> Featuring donated items from local businesses and individuals.</li>
+                <li><strong>Live Performances:</strong> Entertainment from local artists.</li>
+                <li><strong>Closing Ceremony:</strong> Announcing the top fundraisers and presenting awards.</li>
+            </ul>
+            <h3 style="color: #27ae60;">Event Details:</h3>
+            <p>The theme for this year's event is "Run for a Cause," emphasizing the importance of community involvement and support for charitable initiatives. The event aims to bring together people from all walks of life to contribute to a common goal of helping those in need.</p>
+            <h3 style="color: #27ae60;">Objectives:</h3>
+            <ul>
+                <li>Raise awareness for various charitable causes.</li>
+                <li>Promote health and wellness within the community.</li>
+                <li>Encourage community involvement and support.</li>
+                <li>Raise funds for local and international charitable initiatives.</li>
+            </ul>
+            <h3 style="color: #27ae60;">Activities and Schedule:</h3>
+            <table border="1" style="border-collapse: collapse; width: 80%; margin: 0 auto; font-family: Arial, sans-serif;">
+                <thead>
+                    <tr style="background-color: #4CAF50; color: white;">
+                        <th style="padding: 10px; text-align: center;">Time</th>
+                        <th style="padding: 10px; text-align: center;">Activity</th>
+                        <th style="padding: 10px; text-align: center;">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #f2f2f2;">
+                        <td style="padding: 10px; text-align: center;"><strong>8:00 AM - 9:00 AM</strong></td>
+                        <td style="padding: 10px;">Opening Ceremony</td>
+                        <td style="padding: 10px;">
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>Welcome speech by the event organizer</li>
+                                <li>Introduction of sponsors and partners</li>
+                                <li>Overview of the day's events</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; text-align: center;"><strong>9:00 AM - 11:00 AM</strong></td>
+                        <td style="padding: 10px;">Charity Run</td>
+                        <td style="padding: 10px;">
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>Warm-up session led by a fitness instructor</li>
+                                <li>Start of the 5 km run</li>
+                                <li>Water stations and medical support along the route</li>
+                                <li>Finish line celebrations</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr style="background-color: #f2f2f2;">
+                        <td style="padding: 10px; text-align: center;"><strong>11:00 AM - 12:00 PM</strong></td>
+                        <td style="padding: 10px;">Fundraising Auction</td>
+                        <td style="padding: 10px;">
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>Introduction of auction items</li>
+                                <li>Live bidding for donated items</li>
+                                <li>Special appearances by local celebrities</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; text-align: center;"><strong>12:00 PM - 1:00 PM</strong></td>
+                        <td style="padding: 10px;">Lunch Break</td>
+                        <td style="padding: 10px;">
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>Food stalls offering a variety of cuisines</li>
+                                <li>Networking opportunities with other participants</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr style="background-color: #f2f2f2;">
+                        <td style="padding: 10px; text-align: center;"><strong>1:00 PM - 3:00 PM</strong></td>
+                        <td style="padding: 10px;">Live Performances</td>
+                        <td style="padding: 10px;">
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>Music performances by local bands and artists</li>
+                                <li>Dance performances by community groups</li>
+                                <li>Interactive sessions with performers</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; text-align: center;"><strong>3:00 PM - 4:00 PM</strong></td>
+                        <td style="padding: 10px;">Closing Ceremony</td>
+                        <td style="padding: 10px;">
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>Announcement of top fundraisers</li>
+                                <li>Presentation of awards and certificates</li>
+                                <li>Thank you speech by the event organizer</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>            
+        </section>
+
+        <section id="general-information" class="section">
+            <h2 style="color: #27ae60;">General Information:</h2>
+        <p style="font-size: 16px; line-height: 1.5;">The "Charity Run 2024" event will be held at the Saigon Exhibition and Convention Center (SECC) in Ho Chi Minh City, offering a prime location with ample facilities and easy accessibility. Directions to the venue and other details include:</p>
+
+            <h3 style="color: #27ae60;">Directions to the Venue:</h3>
+            <ul style="font-size: 16px; line-height: 1.5;">
+                <li><strong>Address:</strong> Saigon Exhibition and Convention Center (SECC), Ho Chi Minh City.</li>
+                <li><strong>Parking:</strong> On-site parking is available at SECC. Additional parking lots are located in nearby areas for your convenience.</li>
+                <li><strong>Transportation:</strong> The venue is easily accessible by public transportation, including multiple bus routes and taxi services. The closest bus stop is just a short walk from the entrance.</li>
+            </ul>
+
+            <h3 style="color: #27ae60;">Event Exhibitors and Partners:</h3>
+            <ul style="font-size: 16px; line-height: 1.5;">
+                <li><strong>Exhibitors:</strong> Several local businesses and NGOs will have booths showcasing their work and offering various services.</li>
+                <li><strong>Partners:</strong> This event is supported by a wide range of partners, including SECC, Hutech University, Red Cross, etc. These partners contribute to the cause and help make the event successful.</li>
+            </ul>
+            
+            <h3 style="color: #27ae60;">Sponsors:</h3>
+            <div style="text-align: center;">
+                <img src="ACB.jpg" alt="ACB Logo" style="width: 150px; margin-right: 20px;">
+                <img src="vinamilk.jpg" alt="Vinamilk Logo" style="width: 150px;margin-right: 20px;">
+                <img src="redbull.jpg" alt="Red Bull Logo" style="width: 150px;margin-right: 20px;">
+                <img src="Hutech.jpg" alt="Hutech Logo" style="width: 150px;margin-right: 20px;">
+                <img src="RedCross.jpg" alt="RedCross Logo" style="width: 150px;margin-right: 20px;">
+                <img src="SECC.jpg" alt="SECC Logo" style="width: 150px;">
+            </div>
+
+
+            <h3 style="color: #27ae60;">Special Entitlements for Participants:</h3>
+            <ul style="font-size: 16px; line-height: 1.5;">
+                <li><strong>Event T-Shirts:</strong> All registered participants will receive exclusive event t-shirts.</li>
+                <li><strong>Race Bibs:</strong> Participants will be provided with race bibs to wear during the charity run.</li>
+                <li><strong>Goodie Bags:</strong> Each participant will receive a goodie bag filled with items from our generous sponsors, ensuring you have everything you need for the day.</li>
+            </ul>
+
+            <h3 style="color: #27ae60;">Additional Details:</h3>
+            <ul style="font-size: 16px; line-height: 1.5;">
+                <li><strong>Food and Beverages:</strong> There will be a variety of food stalls offering delicious cuisines, ensuring all participants stay energized and hydrated throughout the event.</li>
+                <li><strong>Medical Support:</strong> Medical staff and support stations will be available throughout the venue to ensure the safety and well-being of all participants.</li>
+                <li><strong>Entertainment:</strong> Live music performances, dance acts, and interactive sessions with local artists will keep the atmosphere lively and engaging.</li>
+            </ul>
+
+        <p style="font-size: 16px; line-height: 1.5;">By attending the "Charity Run 2024," you're not only contributing to a noble cause but also enjoying a well-rounded day filled with activities, support, and community spirit. We look forward to seeing you there!</p>
+        </section>
+
+        <section id="participation-information" class="section">
+            <h2 style="color: #27ae60;">Participation Information:</h2>
+            <p>Participation in "Charity Run 2024" is open to runners, volunteers, and sponsors, each playing a crucial role in the success of this event. Here’s how you can get involved:</p>
+            <ul>
+                <li><strong>Runners:</strong> 
+                    <ul>
+                        <li>Register online in advance or on the event day. The registration fee is $50, which includes a t-shirt, race bib, and refreshments.</li>
+                        <li>Ensure to follow the race procedures and safety guidelines provided upon registration. All runners must be at the starting line 30 minutes before the race begins for a mandatory safety briefing.</li>
+                        <li>Participants must be at least 16 years old and in good health. A health declaration form needs to be filled out during registration.</li>
+                        <li>Detailed maps and route information will be provided at the registration booth and online.</li>
+                    </ul>
+                </li>
+                <li><strong>Volunteers:</strong> 
+                    <ul>
+                        <li>Help us make the event a success by volunteering in areas such as registration, race support, crowd management, and more. Sign up online to become a volunteer.</li>
+                        <li>All volunteers will receive a training session prior to the event, including instructions on safety protocols and specific tasks.</li>
+                        <li>Volunteers are expected to commit to a minimum of 4 hours on the event day.</li>
+                        <li>Volunteers will receive a special t-shirt, a certificate of appreciation, and refreshments during their shift.</li>
+                    </ul>
+                </li>
+                <li><strong>Sponsors:</strong> 
+                    <ul>
+                        <li>Businesses can support by sponsoring a portion of the event or donating to the fundraising auction. Various sponsorship packages are available:
+                            <ul>
+                                <li><strong>Bronze Package:</strong> $500 - Includes logo placement on event materials and social media shout-outs.</li>
+                                <li><strong>Silver Package:</strong> $1,000 - Includes all Bronze benefits plus a booth at the event and prominent logo placement.</li>
+                                <li><strong>Gold Package:</strong> $5,000 - Includes all Silver benefits plus naming rights to specific event sections and VIP access.</li>
+                            </ul>
+                        </li>
+                        <li>Exhibitors can rent a booth space for $200 to showcase their products or services.</li>
+                        <li>Contributions to the fundraising auction are welcome. Donors will receive recognition in the event program and on the event website.</li>
+                        <li>For sponsorship inquiries, please contact our sponsorship coordinator at sponsor@charityrun2024.org.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3 style="color: #27ae60;">Clear Rules and Guidelines:</h3>
+            <ul>
+                <li><strong>Safety First:</strong> All participants must adhere to safety guidelines, including wearing appropriate footwear, staying hydrated, and following race marshals' instructions.</li>
+                <li><strong>Race Procedures:</strong> Detailed race procedures, including start times, route information, and finish line protocols, will be provided upon registration.</li>
+                <li><strong>Code of Conduct:</strong> Participants are expected to maintain sportsmanlike behavior and respect all other participants and volunteers.</li>
+            </ul>
+
+        </section>
+        <section id="about" class="section">
+            <h2 style="color: #27ae60;">About Us:</h2>
+                <p>The "Charity Run 2024," organized by ABC, is dedicated to making a significant impact through Fundraising, Awareness, Health Promotion, and Community Building. Our mission is to engage the community in charitable activities that support both local and international initiatives. By participating in this event, you are not only helping to raise essential funds but also spreading awareness about crucial health issues, promoting a healthier lifestyle, and fostering a strong sense of community. At ABC, we believe in the power of collective effort to bring about meaningful change. Join us in this noble cause and help create a better future for all. For more information, feel free to contact us.</p>
+            <ul>
+                <li><strong>Email:</strong> info@charityrun2024.org</li>
+                <li><strong>Phone:</strong> +123-456-7890</li>
+                <li><strong>Website:</strong> <a href="https://secc.com.vn/">@SECC</a></li>
+                <li><strong>Blog:</strong> <a href="https://blog.charityrun2024.org">Visit our Blog</a></li>
+            </ul>
+                <p>Stay connected with us on social media:</p>
+            <ul>
+                <li><strong>Facebook:</strong> <a href="https://www.facebook.com/charityrun2024">fb.com/charityrun2024</a></li>
+                <li><strong>Instagram:</strong> <a href="https://www.instagram.com/charityrun2024">@charityrun2024</a></li>
+                <li><strong>Twitter:</strong> <a href="https://twitter.com/charityrun2024">@charityrun2024</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/charityrun2024">Charity Run 2024</a></li>
+            </ul>
+                <p style="color: #27ae60;"><strong>Sponsors:</strong> Our event is proudly supported by a wide range of sponsors, including:</p>
+            <ul>
+                <li><strong>Platinum Sponsors:</strong> Red Bull, Hutech University</li>
+                <li><strong>Gold Sponsors:</strong> SECC, RedCross VietNam</li>
+                <li><strong>Silver Sponsors:</strong> ACB Bank, Vinamilk</li>
+            </ul>
+                <p>For more information, feel free to contact us or visit our social media pages. We look forward to your participation and support in creating a better future for all.</p>
+                <p><strong>ABC - Making a Difference, One Step at a Time.</strong></p>
+
+        </section>
+    </main>
+
+    <footer style="background-color: #1a1a1a; color: white">
+        <div id="footer" style="display: flex; justify-content: space-between;">
+            <div>
+                <h3>Contact Info</h3>
+                <ul>
+                <li><strong>Phone:</strong> +123-456-7890</li>
+                <li><strong>Email:</strong> info@charityrun2024.org</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>Fanpage</h3>
+                <img src="SECC.jpg" style="max-width: 20px;"><a href="https://www.facebook.com/TinhnguyenvienSECC">SECC</a><br>
+                <img src="Hutech.jpg" style="max-width: 20px;"><a href="https://www.facebook.com/hutechuniversity">Hutech University</a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slideshow img');
+        const totalImages = images.length;
+    
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+    
+        setInterval(showNextImage, 3000);
+    
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    
+        window.onscroll = function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        };
+    
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const countDownDate = new Date("Oct 29, 2024 23:59:59").getTime();
+
+        const x = setInterval(function() {
+
+        const now = new Date().getTime();
+
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "The event has started!";
+        }
+        }, 1000);
+
+    </script>
+    
+    <button id="back-to-top" onclick="scrollToTop()">⇧</button>
+</body>
+</html>

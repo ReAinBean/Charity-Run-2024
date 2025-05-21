@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Inquiry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #ff6f61;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select,
+        .form-group textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 95%;
+        }
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .checkbox-group label {
+            margin-left: 5px;
+            font-size: 16px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+        }
+        .button-group input {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button-group input[type="submit"] {
+            background: #ff6f61;
+            color: #fff;
+            margin-right: 10px;
+        }
+        .button-group input[type="reset"] {
+            background: #bbb;
+            color: #fff;
+        }
+        .alert {
+            display: none;
+            padding: 20px;
+            background-color: #ffeb3b;
+            color: #000;
+            margin-bottom: 15px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .alert button {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            float: right;
+        }
+        .alert button:hover {
+            background-color: #e65f53;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert" id="alertBox">
+        <p><strong>Warning!<br></strong> PLEASE ENTER THE VALUES!</p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+    <form id="enquiryForm">
+        <h1>Event Inquiry Form</h1>
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="event">Interested Event:</label>
+            <select name="Interested Event" id="event">
+                <option value="1" disabled selected>-- Select Your Interested Event --</option>
+                <option value="2km">2km</option>
+                <option value="3km">3km</option>
+                <option value="4km">4km</option>
+                <option value="5km">5km</option>
+                <option value="6km">6km</option>
+                <option value="7km">7km</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="checkbox-container">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="join" name="To Join" value="To Join">
+                    <label for="join">To Join</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="activities" name="Event Activities" value="Event Activities">
+                    <label for="activities">Event Activities</label>
+                </div>
+                <label>Category of Enquiry:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="fees" name="Registration Fees" value="Registration Fees">
+                    <label for="fees">Registration Fees</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="rules" name="Rules & Guidelines" value="Rules & Guidelines">
+                    <label for="rules">Rules & Guidelines</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="message">Detailed Inquiry:</label>
+            <textarea id="message" name="Nhận xét" rows="10" cols="40" wrap="hard" placeholder="Type here ...."></textarea>
+        </div>
+        <div class="button-group">
+            <input type="submit" name="submit" id="submit" value="submit">
+            <input type="reset" name="cancel" id="reset" value="reset">
+        </div>
+    </form>
+    <div id="output"></div>
+    <script src="script.js"></script>
+</body>
+</html>
